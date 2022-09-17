@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+        <script>
+            window.onload = function(){
+                lax.init();
+            }
+            lax.addDriver('scrollY', function(){
+                return window.scrollY;
+            });
+            lax.addElement("#back", {
+                scrollY:{
+                    translateX: [["elInY", "elCenterY", "elOutY"], [0, 'screenWidth/2', 'screenWidth']]
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div id="back"></div>
+        <div id="front"></div>
+    </body>
+</html>
